@@ -4,6 +4,8 @@ from  datetime import datetime
 
 from django.template import Template, Context
 
+from django.template import loader
+
 def saludo(request):
 	return HttpResponse ("Hola Django - Coder")
 
@@ -23,15 +25,29 @@ def apellido (request,ape):
 
 def probandoTemplate (request):
 
-    miHTML = open ("C:/Users/Belu/Desktop/Proyecto clase 17/Proyecto1/Proyecto1/plantillas/template1.html")
+    mejorEstudiante = "Mariano"
 
-    plantilla = Template(miHTML.read())
+    nota = 8.9
 
-    miHTML.close ()
+    fecha = datetime.now
 
-    miContexto = Context ()
+    estudiantesSimpaticos = ["Juan", "Pepe", "Lore"]
 
-    documento = plantilla.render (miContexto)
+    dicc = {"nombre": mejorEstudiante , "nota": nota, "fecha":fecha, "estudiantes": estudiantesSimpaticos}
+
+    plantilla = loader.get_template ("template1.html")
+
+    documento = plantilla.render(dicc)
+
+    # miHTML = open ("C:/Users/Belu/Desktop/Clase 18/ejemplosclase18/Proyecto clase 17/Proyecto1/Proyecto1/plantillas/template1.html")
+
+    # plantilla = Template(miHTML.read())
+
+    # miHTML.close ()
+
+    # miContexto = Context (dicc)
+
+    # documento = plantilla.render (miContexto)
 
     return HttpResponse (documento)
 

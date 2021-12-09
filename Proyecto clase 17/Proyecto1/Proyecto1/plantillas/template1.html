@@ -8,11 +8,32 @@
 </head>
 <body>
 
+    <h5>{{fecha}}</h5>
+
     <h1>Bienvenidos a mi primera pagina WEB</h1>
 
     <h2>HOLIIIIII</h2>
 
     <p>A ver para que sirve esto....</p>
+
+    <h2 style= "color:blue">El mejor estudiante es {{nombre}} </h2>
+
+    <h2 style = "color:aqua"> Su nota es {{nota}}</h2>
+
+    <h1>LOS SIMPATICOS SON: </h1> <br>
+
+    {% for estu in estudiantes %}
+
+        {%if estu == "Pepe"%}
+
+            <p style = "color:blueviolet">Pepe</p>
+
+        {%else%}
+
+            <p>{{estu}}</p>
+        {%endif%}
+        
+    {% endfor %}
 
 </body>
 </html>

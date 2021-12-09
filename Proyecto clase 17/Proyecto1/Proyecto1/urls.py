@@ -30,7 +30,7 @@ urlpatterns = [
 
     path ("felicitacion/<ape>", apellido),
 
-    path ("template", probandoTemplate),
+    path ("template/", probandoTemplate),
 
     
 
