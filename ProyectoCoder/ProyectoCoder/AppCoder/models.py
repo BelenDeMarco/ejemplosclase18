@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-# la clase hereda del paquete models
+# en django siempre la clase hereda del paquete models la clase Model
 
 class Curso (models.Model):
 
@@ -10,4 +10,9 @@ class Curso (models.Model):
 
     comision= models.IntegerField()
 
+class Jugador (models.Model):
 
+    apellido = models.CharField (max_length= 40)
+    numero = models.IntegerField ()
+    esBueno = models.BooleanField ()
+    
