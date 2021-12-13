@@ -10,9 +10,14 @@ class Curso (models.Model):
 
     comision= models.IntegerField()
 
+#modifica la forma de ver los datos incluso en el panel de admin de Django
+    def __str__ (self):
+
+        return f"CURSO: {self.nombre} COMISION {self.comision}"
+
+
 class Jugador (models.Model):
 
     apellido = models.CharField (max_length= 40)
     numero = models.IntegerField ()
-    esBueno = models.BooleanField ()
     

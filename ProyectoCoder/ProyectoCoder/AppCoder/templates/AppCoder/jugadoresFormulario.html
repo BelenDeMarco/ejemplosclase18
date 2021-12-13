@@ -1,0 +1,26 @@
+{%extends "AppCoder/padre.html" %}
+
+{%load static %}
+
+{%block contenido2%}
+
+    <div class="masthead-subheading">Jugadores</div>
+    <div class="masthead-heading text-uppercase">Formulario</div>
+
+{%endblock%}
+
+
+{%block contenidoVariable%}
+
+<form action = "/AppCoder/jugadoresFormulario" method = "POST"> {% csrf_token %} 
+
+    <p> Apellido: <input type = "text"    name= "apellido"> </p>
+
+    <p> Numero: <input type = "number"    name = "numero"> </p>
+
+
+    <input type= submit   value = "ENVIAR">
+
+    </form> 
+
+{%endblock%}
